@@ -21,7 +21,6 @@ const slides = [
 
 // Initialisation des variables //
 
-let banner = document.getElementById("banner");
 let tagLineElement = document.querySelector(".tagline"); 
 let currentSlide = 0;
 
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSlide();
     });
 
-    // Ajoute des gestionnaires d'événements aux dots
+    // Ajoute des gestionnaires d'événements aux dots //
     const dots = document.querySelectorAll(".dot");
     dots.forEach((dot, index) => {
         dot.addEventListener("click", () => {
@@ -57,7 +56,7 @@ function updateSlide() {
     imageElement.src = slides[currentSlide].image;
     tagLineElement.innerHTML = slides[currentSlide].tagLine;
 
-    // Met à jour la classe active pour les dots
+    // Met à jour la classe active pour les dots //
     const dots = document.querySelectorAll(".dot");
     dots.forEach((dot, index) => {
         if (index === currentSlide) {
