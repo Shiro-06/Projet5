@@ -1,5 +1,4 @@
-// Tableau définissant toutes mes slides avec leurs tagline correspondante //
-
+// Tableau définissant toutes mes slides avec leurs tagline correspondante
 const slides = [
     {
         "image": "./assets/images/slideshow/slide1.jpg",
@@ -19,27 +18,28 @@ const slides = [
     }
 ];
 
-// Initialisation des variables //
-
+// Initialisation des variables
 let tagLineElement = document.querySelector(".tagline"); 
 let currentSlide = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
     updateSlide();
 
+    // Gestionnaire d'événement pour le bouton précédent
     document.getElementById("prevBtn").addEventListener("click", () => {
         console.log("Previous button clicked");
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateSlide();
     });
 
+    // Gestionnaire d'événement pour le bouton suivant
     document.getElementById("nextBtn").addEventListener("click", () => {
         console.log("Next button clicked");
         currentSlide = (currentSlide + 1) % slides.length;
         updateSlide();
     });
 
-    // Ajoute des gestionnaires d'événements aux dots //
+    // Ajoute des gestionnaires d'événements aux dots
     const dots = document.querySelectorAll(".dot");
     dots.forEach((dot, index) => {
         dot.addEventListener("click", () => {
@@ -50,13 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Fonction pour mettre à jour l'affichage de la slide courante
 function updateSlide() {
     const imageElement = document.querySelector(".slide img");
     
     imageElement.src = slides[currentSlide].image;
     tagLineElement.innerHTML = slides[currentSlide].tagLine;
 
-    // Met à jour la classe active pour les dots //
+    // Met à jour la classe active pour les dots
     const dots = document.querySelectorAll(".dot");
     dots.forEach((dot, index) => {
         if (index === currentSlide) {
