@@ -133,14 +133,14 @@ header {
 	position: absolute;
 }
 #banner .arrow_left {
-	left: -800px;
+	right: 40vw;
 	position: relative;
 	cursor: pointer;
 	opacity: 0.4;
 	transition: all 0.3s ease;
 }
 #banner .arrow_right {
-	right: -800px;
+	left: 40vw;
 	position: relative;
 	cursor: pointer;
 	opacity: 0.4;
